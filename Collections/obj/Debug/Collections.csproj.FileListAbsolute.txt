@@ -1,0 +1,14 @@
+C:\Users\rjcvj\source\repos\Collections\Collections\bin\Debug\Collections.exe.config
+C:\Users\rjcvj\source\repos\Collections\Collections\bin\Debug\Collections.exe
+C:\Users\rjcvj\source\repos\Collections\Collections\bin\Debug\Collections.pdb
+C:\Users\rjcvj\source\repos\Collections\Collections\obj\Debug\Collections.csprojAssemblyReference.cache
+C:\Users\rjcvj\source\repos\Collections\Collections\obj\Debug\Collections.csproj.CoreCompileInputs.cache
+C:\Users\rjcvj\source\repos\Collections\Collections\obj\Debug\Collections.exe
+C:\Users\rjcvj\source\repos\Collections\Collections\obj\Debug\Collections.pdb
+G:\PROGRAMMING\VSprojects\Collections\Collections\bin\Debug\Collections.exe.config
+G:\PROGRAMMING\VSprojects\Collections\Collections\bin\Debug\Collections.exe
+G:\PROGRAMMING\VSprojects\Collections\Collections\bin\Debug\Collections.pdb
+G:\PROGRAMMING\VSprojects\Collections\Collections\obj\Debug\Collections.csprojAssemblyReference.cache
+G:\PROGRAMMING\VSprojects\Collections\Collections\obj\Debug\Collections.csproj.CoreCompileInputs.cache
+G:\PROGRAMMING\VSprojects\Collections\Collections\obj\Debug\Collections.exe
+G:\PROGRAMMING\VSprojects\Collections\Collections\obj\Debug\Collections.pdb
