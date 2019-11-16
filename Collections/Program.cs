@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 ///1.Создать экземпляр класс упорядоченный список или любой другой контейнер с числовым типом.
 ///Заполнить список случайными значениями, в диапазоне, указанном пользователем.
 ///1.Описать функцию предикат, которая проверяет, является ли передаваемое число простым.
-//2.Описать функцию предикат, определяющую является ли передаваемое число положительным и кратным значению, передаваемому вторым аргументом.
+///2.Описать функцию предикат, определяющую является ли передаваемое число положительным и кратным значению, передаваемому вторым аргументом.
 //3.Описать функцию, которая будет считать сумму цифр, которые содержат отверстие->(0698). Описать для поиска соответствующий
-//4.Отсортировать список.используя описанные предикаты.
+///4.Отсортировать список.используя описанные предикаты.
 
 //2. К заданию про фигуры добавить возможность сортировки коллекции по площади фигуры.
 
@@ -31,7 +31,7 @@ namespace Collections
     
         static void Main(string[] args)
         {
-            Console.SetWindowSize(30, 60);
+            Console.SetWindowSize(60, 60);
             //это не по заданию
             //Console.SetBufferSize(30, 60);
             //Console.CursorVisible = false;
@@ -80,6 +80,7 @@ namespace Collections
             for (int i = 0; i < 30; i++)
                 numbers.Add(random0.Next(firstInput, secondInput + 1));
 
+            #region FirstSort
             //создаем объект для сортировки
             SortPrime sortPrime = new SortPrime();
 
@@ -92,7 +93,7 @@ namespace Collections
             foreach (var item in numbers)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                if (sortPrime.IsPrimeNumber(item))
+                if (sortPrime.Foo(item))
                     Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(item);
             }
@@ -106,13 +107,69 @@ namespace Collections
             foreach (var item in numbers)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                if (sortPrime.IsPrimeNumber(item))
+                if (sortPrime.Foo(item))
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(item);
+            }
+            Console.ResetColor();
+            #endregion
+            Console.WriteLine();
+            #region SecondRegion
+            //создаем объект для сортировки
+            SortInputNumber sortInputNumber = new SortInputNumber();
+            int inputNumber, multipleNumber;
+            Console.WriteLine("Введите число: ");
+            do
+            {
+                isNumber = Int32.TryParse(Console.ReadLine(), out inputNumber);
+            } while (!isNumber);
+            Console.WriteLine("Введите кратность этому числу: ");
+            do
+            {
+                isNumber = Int32.TryParse(Console.ReadLine(), out multipleNumber);
+            } while (!isNumber);
+            SortInputNumber.NumberInput = multipleNumber;
+
+            if (sortInputNumber.Foo(inputNumber))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Является! Положительным и кратным числу: {multipleNumber}");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Не является :(");
+            }
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"\nА также List кратный: {multipleNumber}");
+            Console.ResetColor();
+            //выводим в консоль список (до сортировки)
+            Console.WriteLine("\nbefore sort");
+            foreach (var item in numbers)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                if (sortInputNumber.Foo(item))
                     Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(item);
             }
             Console.ResetColor();
 
+            //сортируем
+            numbers.Sort(sortInputNumber);
 
+            //выводим в консоль список (после сортировки)
+            Console.WriteLine("\nAfter sort");
+            foreach (var item in numbers)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                if (sortInputNumber.Foo(item))
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(item);
+            }
+            Console.ResetColor();
+            #endregion
 
 
 
