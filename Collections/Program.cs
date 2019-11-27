@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 ///Заполнить список случайными значениями, в диапазоне, указанном пользователем.
 ///1.Описать функцию предикат, которая проверяет, является ли передаваемое число простым.
 ///2.Описать функцию предикат, определяющую является ли передаваемое число положительным и кратным значению, передаваемому вторым аргументом.
-//3.Описать функцию, которая будет считать сумму цифр, которые содержат отверстие->(0698). Описать для поиска соответствующий
+///3.Описать функцию, которая будет считать сумму цифр, которые содержат отверстие->(0698). Описать для поиска соответствующий
 ///4.Отсортировать список.используя описанные предикаты.
 
-//2. К заданию про фигуры добавить возможность сортировки коллекции по площади фигуры.
+///2. К заданию про фигуры добавить возможность сортировки коллекции по площади фигуры.
 
 
 
@@ -114,9 +114,12 @@ namespace Collections
             Console.ResetColor();
             #endregion
             Console.WriteLine();
-            #region SecondRegion
+            #region SecondSort
             //создаем объект для сортировки
             SortInputNumber sortInputNumber = new SortInputNumber();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Second Sort");
+            Console.ResetColor();
             int inputNumber, multipleNumber;
             Console.WriteLine("Введите число: ");
             do
@@ -171,8 +174,45 @@ namespace Collections
             Console.ResetColor();
             #endregion
 
+            #region ThirdSort
+            //создаем объект для сортировки
+            SortByZeroInNumber sortByZeroInNumber = new SortByZeroInNumber();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Third Sort");
+            Console.ResetColor();
+            if (sortByZeroInNumber.Foo(5498))
+                Console.WriteLine("\n5498 - yes");
+            else
+                Console.WriteLine("5498 - no");
 
+            Console.WriteLine("sum 5498: {0}", sortByZeroInNumber.Sum(5498));
 
+            //выводим в консоль список (до сортировки)
+            Console.WriteLine("\nbefore sort");
+            foreach (var item in numbers)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                if (sortByZeroInNumber.Foo(item))
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(item);
+            }
+            Console.ResetColor();
+
+            //сортировка
+            numbers.Sort(sortByZeroInNumber);
+
+            //выводим в консоль список (после сортировки)
+            Console.WriteLine("\nAfter sort");
+            foreach (var item in numbers)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                if (sortByZeroInNumber.Foo(item))
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(item);
+            }
+            Console.ResetColor();
+
+            #endregion
 
 
 

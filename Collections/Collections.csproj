@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassFromSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sort\SortPrime.cs" />
+    <Compile Include="Sort\SortInputNumber.cs" />
+    <Compile Include="Sort\SortByZeroInNumber.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>

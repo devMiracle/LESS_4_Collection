@@ -12,7 +12,6 @@ namespace Collections
         public int Age { get; set; }
         public Student() : this ("unknown", 18)
         {
-
         }
         public Student(string name, int age)
         {
